@@ -13,7 +13,13 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-Then edit `.env` to add your API key and run the app.
+Then edit `.env` to add your API key and run the app:
+
+```bash
+nano .env  # Set ONE of: ANTHROPIC_API_KEY, OPENAI_API_KEY, or GOOGLE_API_KEY
+source venv/bin/activate
+uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+```
 
 ---
 
@@ -65,14 +71,6 @@ nano .env  # Set ONE of: ANTHROPIC_API_KEY, OPENAI_API_KEY, or GOOGLE_API_KEY
 ```
 
 ## Step 6: Run the Application
-
-### Development Mode
-
-```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
-
-### Production Mode
 
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
