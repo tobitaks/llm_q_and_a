@@ -40,8 +40,12 @@ if [ ! -f ".env" ]; then
     cp .env.example .env
     echo ""
     echo "=== IMPORTANT ==="
-    echo "Please edit the .env file and add your Anthropic API key:"
-    echo "  nano .env"
+    echo "Please edit the .env file and set ONE of the following API keys:"
+    echo "  - ANTHROPIC_API_KEY"
+    echo "  - OPENAI_API_KEY"
+    echo "  - GOOGLE_API_KEY"
+    echo ""
+    echo "Run: nano .env"
     echo ""
 fi
 
