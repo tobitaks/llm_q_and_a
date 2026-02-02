@@ -4,7 +4,7 @@ This guide covers deploying the LLM Q&A Service on a fresh Ubuntu Server (20.04 
 
 ## Quick Setup for Ubuntu (Automated)
 
-Run the setup script to automate installation:
+### Step 1: Clone and Run Setup Script
 
 ```bash
 git clone https://github.com/tobitaks/llm_q_and_a.git
@@ -13,13 +13,25 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-Then edit `.env` to add your API key and run the app:
+### Step 2: Set Environment Variables
 
 ```bash
+cp .env.example .env
 nano .env  # Set ONE of: ANTHROPIC_API_KEY, OPENAI_API_KEY, or GOOGLE_API_KEY
+```
+
+### Step 3: Run the Application
+
+```bash
 source venv/bin/activate
 uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
 ```
+
+### Step 4: Verify Deployment
+
+1. Open a browser and navigate to `http://<server-ip>:8000`
+2. Enter a question and submit
+3. Verify JSON logs appear in the terminal
 
 ---
 
