@@ -45,7 +45,7 @@ Set one API key in `.env` and the app auto-detects which provider to use.
    ```bash
    git clone https://github.com/tobitaks/llm_q_and_a.git
    cd llm_q_and_a
-   python3 -m venv venv
+   python3.12 -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
    ```
